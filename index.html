@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #ffd6e7, #fff0f6, #ffe0ec);
+    }
+
+    .contenedor {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        padding: 25px;
+    }
+
+    .gatito {
+        position: relative;
+        width: 220px;
+        height: 190px;
+        margin: auto;
+        animation: flotar 3s ease-in-out infinite;
+    }
+
+    /* Orejas */
+    .oreja {
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        background: #fff;
+        border: 4px solid #333;
+        top: 5px;
+        border-radius: 15px 50px 10px 50px;
+        z-index: 0;
+    }
+
+    .oreja.izq {
+        left: 25px;
+        transform: rotate(-20deg);
+    }
+
+    .oreja.der {
+        right: 25px;
+        transform: scaleX(-1) rotate(-20deg);
+    }
+
+    .interior {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background: #ffb6cc;
+        top: 14px;
+        left: 12px;
+        border-radius: 10px 30px 5px 30px;
+    }
+
+    /* Cabeza */
+    .cabeza {
+        position: absolute;
+        width: 170px;
+        height: 145px;
+        background: white;
+        border: 4px solid #333;
+        border-radius: 50%;
+        left: 25px;
+        top: 35px;
+        z-index: 1;
+    }
+
+    /* Ojos */
+    .ojo {
+        position: absolute;
+        width: 15px;
+        height: 20px;
+        background: #333;
+        border-radius: 50%;
+        top: 55px;
+    }
+
+    .ojo.izq {
+        left: 45px;
+    }
+
+    .ojo.der {
+        right: 45px;
+    }
+
+    /* Nariz */
+    .nariz {
+        position: absolute;
+        width: 18px;
+        height: 14px;
+        background: #ff8eae;
+        border-radius: 50%;
+        left: 72px;
+        top: 82px;
+    }
+
+    /* Boca */
+    .boca {
+        position: absolute;
+        left: 77px;
+        top: 92px;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Bigotes */
+    .bigote {
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        background: #555;
+        top: 90px;
+    }
+
+    .bigote.izq1 {
+        left: -30px;
+        transform: rotate(10deg);
+    }
+
+    .bigote.izq2 {
+        left: -30px;
+        top: 102px;
+        transform: rotate(-5deg);
+    }
+
+    .bigote.der1 {
+        right: -30px;
+        transform: rotate(-10deg);
+    }
+
+    .bigote.der2 {
+        right: -30px;
+        top: 102px;
+        transform: rotate(5deg);
+    }
+
+    /* Besito */
+    .beso {
+        position: absolute;
+        right: -35px;
+        top: 50px;
+        font-size: 48px;
+        animation: beso 2s ease-in-out infinite;
+        z-index: 4;
+    }
+
+    h1 {
+        color: #d94f7d;
+        font-size: 30px;
+        margin: 25px auto 10px;
+        max-width: 600px;
+        animation: aparecer 2s ease;
+    }
+
+    p {
+        color: #8a5266;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    .corazon {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        animation: subir 6s linear infinite;
+        opacity: 0.8;
+    }
+
+    .c1 { left: 10%; animation-delay: 0s; }
+    .c2 { left: 25%; animation-delay: 2s; }
+    .c3 { left: 45%; animation-delay: 1s; }
+    .c4 { left: 65%; animation-delay: 3s; }
+    .c5 { left: 85%; animation-delay: 1.5s; }
+
+    @keyframes flotar {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    @keyframes beso {
+        0%, 100% {
+            transform: translateX(0) scale(1);
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        60% {
+            transform: translateX(45px) scale(1.2);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(70px) scale(1.3);
+            opacity: 0;
+        }
+    }
+
+    @keyframes aparecer {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes subir {
+        from {
+            transform: translateY(0) scale(0.7);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.9;
+        }
+        to {
+            transform: translateY(-110vh) scale(1.3) rotate(20deg);
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 500px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .gatito {
+            transform: scale(0.85);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="corazon c1">❤️</div>
+<div class="corazon c2">💕</div>
+<div class="corazon c3">💗</div>
+<div class="corazon c4">💖</div>
+<div class="corazon c5">❤️</div>
+
+<div class="contenedor">
+
+    <div class="gatito">
+
+        <div class="oreja izq">
+            <div class="interior"></div>
+        </div>
+
+        <div class="oreja der">
+            <div class="interior"></div>
+        </div>
+
+        <div class="cabeza">
+
+            <div class="ojo izq"></div>
+            <div class="ojo der"></div>
+
+            <div class="nariz"></div>
+            <div class="boca">ω</div>
+
+            <div class="bigote izq1"></div>
+            <div class="bigote izq2"></div>
+            <div class="bigote der1"></div>
+            <div class="bigote der2"></div>
+
+        </div>
+
+        <div class="beso">💋</div>
+
+    </div>
+
+    <h1>Espero estés teniendo un día bonito, corazón ❤️</h1>
+
+    <p>T mando un besito 💋</p>
+
+</div>
+
+</body>
+</html>
